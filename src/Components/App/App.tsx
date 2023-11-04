@@ -1,21 +1,39 @@
 import React, { useState } from 'react';
 import './App.css';
 import { getSiteText } from './Utils/apiCalls';
+import loadingGif from '../../loading.gif';
 
 function App() {
 
   const [siteURL, setSiteURL] = useState<string>("");
-  
+  const [siteSummary, setSiteSummary] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+
   const fetchAPI = () => {
-    getSiteText(siteURL).then(data => {
-      console.log(data)
-    })
-  }
+    if(!siteURL.length) {
+      setError(true)
+    }
+
+    setLoading(true);
+
+    try {
+      getSiteText(siteURL).then(data => {
+        setSiteSummary(data.data);
+        setLoading(false);
+        setError(false);
+      })
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+      setError(false);
+    }
+   
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSiteURL(e.target.value)
-    console.log(e.target.value)
-  }
+  };
 
   return (
     <div className="App">
@@ -27,11 +45,14 @@ function App() {
       <div>
         <input type="text" placeholder="URL HERE" onChange={(e) => {handleChange(e)}} value={siteURL}></input>
         <button onClick={fetchAPI}>GET SUMMARY</button>
+        {error && <p>Please type in a URL </p>}
       </div>
-      <div>
+      {loading && <img src={loadingGif} alt="loading animation"/>}
+      {siteSummary && 
+      <div className='summary-container'>
         <h2>Site Summary:</h2>
-        
-      </div>
+        <p className='summary-box'>{siteSummary}</p>
+      </div>}
     </div>
   );
 }
