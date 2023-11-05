@@ -4,7 +4,8 @@ This application allows users to type in a URL of a website, and recieve a AI ge
 
 ## Demonstration
 
-https://github.com/sakisandrac/site-summary/assets/118419729/8922c6db-1543-4b8a-8005-d38006843532
+https://github.com/sakisandrac/site-summary/assets/118419729/b4b8c3c5-bde1-42a5-8b9a-ce7666968467
+
 
 ## How to use:
 - Fork/Clone this repo
