@@ -57,6 +57,9 @@ button {
   align-items: center;
 }
 
+.warning {
+  font-size: .95rem;
+}
 footer {
   position: absolute;
   bottom: 0;

@@ -42,8 +42,8 @@ function App() {
       <div className='main-container'>
         <h1>AI Powered Website Summaries</h1>
         <div>
-          <p>Enter a URL in the space below, and get an AI powered summary of it's contents</p>
-          <p>Note: Works best with text based web pages like articles!</p>
+          <p>Enter a URL in the space below, and get an AI powered summary of it's contents- Works best with text based web pages like articles!</p>
+          <p className='warning'>WARNING: ChatGPT calls take ~30seconds, please be patient!</p>
         </div>
         <div>
           <input type="text" placeholder="URL HERE" onChange={(e) => { handleChange(e) }} value={siteURL}></input>
