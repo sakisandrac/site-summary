@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import { getSiteText } from './Utils/apiCalls';
+import { getSiteText } from '../../Utils/apiCalls';
 import loadingGif from '../../loading.gif';
+import Nav from '../Nav/Nav';
 
 function App() {
 
@@ -37,22 +38,28 @@ function App() {
 
   return (
     <div className="App">
-      <h1>AI Powered Website Summaries</h1>
-      <div>
-        <p>Enter a URL in the space below, and get an AI powered summary of it's contents</p>
-        <p>Note: Works best with text based web pages like articles!</p>
+      <Nav />
+      <div className='main-container'>
+        <h1>AI Powered Website Summaries</h1>
+        <div>
+          <p>Enter a URL in the space below, and get an AI powered summary of it's contents</p>
+          <p>Note: Works best with text based web pages like articles!</p>
+        </div>
+        <div>
+          <input type="text" placeholder="URL HERE" onChange={(e) => { handleChange(e) }} value={siteURL}></input>
+          <button onClick={fetchAPI}>GET SUMMARY</button>
+          {error && <p>Please type in a URL </p>}
+        </div>
       </div>
-      <div>
-        <input type="text" placeholder="URL HERE" onChange={(e) => {handleChange(e)}} value={siteURL}></input>
-        <button onClick={fetchAPI}>GET SUMMARY</button>
-        {error && <p>Please type in a URL </p>}
-      </div>
-      {loading && <img src={loadingGif} alt="loading animation"/>}
+      {loading && <img className='loading-img' src={loadingGif} alt="loading animation"/>}
       {siteSummary && 
       <div className='summary-container'>
-        <h2>Site Summary:</h2>
+        <h2>Your Site Summary:</h2>
         <p className='summary-box'>{siteSummary}</p>
       </div>}
+      <footer>
+        <i>Uses ChatGPT's OpenAI API, please use your own API key when using locally.</i>
+      </footer>
     </div>
   );
 }

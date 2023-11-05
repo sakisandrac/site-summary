@@ -2,36 +2,16 @@ body {
   background-color: rgb(249, 242, 234);
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.loading-img {
+  width: 200px;
 }
 
 h1 {
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.5rem;
 }
 
-.summary-box {
-  border: 1px solid black;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-  box-shadow: 0 10px 6px -6px #777;
-  padding: 10px;
-  margin: 20px;
-  background-color: rgb(254, 250, 250);
-}
-
-.summary-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-img {
-  width: 200px;
+h2 {
+  margin: none;
 }
 
 input {
@@ -47,4 +27,39 @@ button {
   border-radius: 15px;
   padding: 6px;
   background-color: rgb(255, 221, 227);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main-container {
+ background-color: white;
+ padding: 10px 15px;
+ margin: 20px;
+ border-radius: 20px;
+}
+
+.summary-box {
+  border-radius: 20px;
+  box-shadow: 0 7px 6px -6px #777777b2;
+  padding: 10px;
+  margin: 20px;
+  background-color: rgb(254, 250, 250);
+}
+
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin: 20px;
+  font-size: .9rem;
 }
