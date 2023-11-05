@@ -41,6 +41,7 @@ function App() {
       <Nav />
       <div className='main-container'>
         <h1>AI Powered Website Summaries</h1>
+        <p><b>* Please Download the BACKEND to use this application <a href="https://github.com/sakisandrac/site-summary-api">here</a> *</b></p>
         <div>
           <p>Enter a URL in the space below, and get an AI powered summary of it's contents- Works best with text based web pages like articles!</p>
           <p className='warning'>WARNING: ChatGPT calls take ~30seconds, please be patient!</p>
