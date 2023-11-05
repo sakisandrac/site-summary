@@ -6,6 +6,11 @@ This application allows users to type in a URL of a website, and recieve a AI ge
 
 https://github.com/sakisandrac/site-summary/assets/118419729/b4b8c3c5-bde1-42a5-8b9a-ce7666968467
 
+## Technologies used:
+This is a full stack application, using TypeScript and React for the frontend and Node.js with Express.js, Cheerio, and ChatGPT's OpenAI API in the backend. Built in roughly 4 hours. 
+
+## How this application works:
+The way this application works is that the user inputs a website into the form, which then sends URL to the backend through an API call. The backend takes the URL, fetches the HTML from the website, and then that HTML is parsed through Cheerio to only extract the main content on the page. That content is then sent to ChatGPT through a fetch request to the OpenAI API with a prompt asking ChatGPT to summarize the content it's given. The summary is then sent back to the user to display on the main page of the application.
 
 ## How to use:
 - Fork/Clone this repo
